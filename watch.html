@@ -60,52 +60,6 @@ body{
 }
 
 /* BUTTON GROUP (YOUTUBE STYLE) */
-.action-bar{
-  display:flex;
-  gap:10px;
-  margin-top:15px;
-  flex-wrap:wrap;
-}
-
-.btn{
-  flex:1;
-  padding:12px;
-  border:none;
-  border-radius:999px;
-  font-size:14px;
-  font-weight:600;
-  cursor:pointer;
-  text-align:center;
-  text-decoration:none;
-}
-
-/* BUTTON COLORS */
-.btn-live{
-  background:#dc2626;
-  color:#fff;
-}
-
-.btn-live:hover{
-  background:#b91c1c;
-}
-
-.btn-alt{
-  background:#1f2937;
-  color:#fff;
-}
-
-.btn-alt:hover{
-  background:#111827;
-}
-
-.btn-score{
-  background:#22c55e;
-  color:#fff;
-}
-
-.btn-score:hover{
-  background:#16a34a;
-}
 
 /* MOBILE */
 @media(max-width:480px){
@@ -125,11 +79,100 @@ body{
   font-size:18px;
   cursor:pointer;
 }
+/* ================= HEADER ================= */
+.app-header{
+  position:sticky;
+  top:0;
+  z-index:999;
+  background:rgba(15,23,42,.95);
+  backdrop-filter:blur(10px);
+  padding:12px 15px;
+  border-bottom:1px solid rgba(255,255,255,.05);
+}
+
+.logo{
+  font-size:18px;
+  font-weight:700;
+  letter-spacing:.5px;
+}
+
+.logo span{
+  color:#22c55e;
+}
+
+/* ================= ACTION BAR ================= */
+.action-bar{
+  display:flex;
+  gap:10px;
+  margin-top:15px;
+}
+
+/* BUTTON BASE */
+.btn{
+  flex:1;
+  padding:12px;
+  border:none;
+  border-radius:999px;
+  font-size:14px;
+  font-weight:600;
+  cursor:pointer;
+  text-align:center;
+  text-decoration:none;
+  transition:.2s;
+}
+
+/* BUTTON COLORS */
+.btn-live{
+  background:#dc2626;
+  color:#fff;
+  box-shadow:0 0 12px rgba(220,38,38,.6);
+}
+
+.btn-alt{
+  background:#1f2937;
+  color:#fff;
+}
+
+.btn-score{
+  background:#22c55e;
+  color:#fff;
+}
+
+/* ================= MOBILE PRO ================= */
+@media(max-width:768px){
+
+  /* STICKY BOTTOM */
+  .action-bar{
+    position:fixed;
+    bottom:0;
+    left:0;
+    width:100%;
+    padding:10px;
+    background:rgba(15,23,42,.95);
+    backdrop-filter:blur(10px);
+    border-top:1px solid rgba(255,255,255,.05);
+    z-index:999;
+  }
+
+  /* 3 BUTTON GRID */
+  .btn{
+    font-size:13px;
+    padding:10px;
+  }
+
+  /* Biar konten gak ketutup */
+  .player-container{
+    padding-bottom:80px;
+  }
+
+}
 </style>
 </head>
 
 <body>
-
+<header class="app-header">
+  <div class="logo">Score808<span>.my.id</span></div>
+</header>
 <div class="player-container">
 
   <!-- PLAYER -->
@@ -142,12 +185,11 @@ body{
   <div class="video-title">Live Streaming Pertandingan</div>
 
   <!-- ✅ ACTION BAR MANUAL -->
-  <div class="action-bar">
-    <a href="https://live.score808.my.id/" target="_blank" class="btn btn-live">🔴 V2</a>
-    <a href="https://tigoals.candil.eu.org/p/highlights.html" target="_blank" class="btn btn-alt">📺 Highlights</a>
-    <a href="https://tigoals.candil.eu.org/" target="_blank" class="btn btn-score">📊 LiveScore</a>
-  </div>
-
+<div class="action-bar">
+  <a href="https://live.score808.my.id/" target="_blank" class="btn btn-live">🔴 Live V2</a>
+  <a href="https://tigoals.candil.eu.org/p/highlights.html" target="_blank" class="btn btn-alt">📺 Highlights</a>
+  <a href="https://tigoals.candil.eu.org/" target="_blank" class="btn btn-score">📊 LiveScore</a>
+</div>
 </div>
 
 <script>

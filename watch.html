@@ -145,20 +145,64 @@ box-shadow:0 0 12px rgba(239,68,68,.5);
 .btn:hover{transform:translateY(-2px);}
 
 /* MOBILE FIX */
+/* MOBILE STICKY BAR FIX */
 @media(max-width:768px){
+
 .actions{
 position:fixed;
 bottom:0;
 left:0;
 width:100%;
-padding:10px;
-background:rgba(2,6,23,.95);
+padding:10px 12px calc(10px + env(safe-area-inset-bottom));
+background:rgba(2,6,23,.98);
 backdrop-filter:blur(12px);
-border-top:1px solid rgba(255,255,255,.05);
+border-top:1px solid rgba(255,255,255,.06);
+z-index:999;
+
+/* FIX LAYOUT */
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:8px;
 }
-.container{padding-bottom:90px;}
+
+/* BUTTON FIX */
+.btn{
+padding:10px 6px;
+font-size:12px;
+border-radius:12px;
+white-space:nowrap;
+overflow:hidden;
+text-overflow:ellipsis;
+
+/* biar gak kepencet */
+display:flex;
+align-items:center;
+justify-content:center;
+gap:4px;
+}
+
+/* ICON ONLY DI LAYAR SEMPIT */
+@media(max-width:380px){
+.btn span{display:none;}
+}
+
+.container{
+padding-bottom:95px;
+}
+
+}
+  .btn:active{
+transform:scale(.95);
+opacity:.8;
+}
+  .ads{
+margin:12px 0;
+padding:6px;
+border-radius:10px;
+background:#fff;
 }
 </style>
+  <script src="https://jsc.mgid.com/site/829703.js" async></script>
 </head>
 
 <body>
@@ -180,9 +224,12 @@ border-top:1px solid rgba(255,255,255,.05);
 
 <div class="title">Live Streaming Pertandingan</div>
 <div class="info">Klik play untuk mulai streaming</div>
-
+  <div class="ads">
+<div data-type="_mgwidget" data-widget-id="1882211"></div>
+<script>(function(w,q){w[q]=w[q]||[];w[q].push(["_mgc.load"])})(window,"_mgq");</script>
+  </div>
 <div class="actions">
-<a href="https://live.score808.my.id/" target="_blank" class="btn btn-live">🔴 Live</a>
+<a href="https://live.score808.my.id/" target="_blank" class="btn btn-live">🔴 V2</a>
 <a href="https://tigoals.candil.eu.org/p/highlights.html" target="_blank" class="btn btn-alt">📺 Highlights</a>
 <a href="https://tigoals.candil.eu.org/" target="_blank" class="btn btn-score">📊 Score</a>
 </div>

@@ -116,91 +116,212 @@ font-size:13px;
 color:var(--muted);
 }
 
-/* ACTION BAR */
+/* ACTION WRAPPER */
 .actions{
 display:flex;
-gap:10px;
-margin-top:15px;
+gap:12px;
+margin-top:18px;
+flex-wrap:wrap;
 }
 
+/* BASE BUTTON */
 .btn{
 flex:1;
-padding:12px;
-border-radius:999px;
-text-align:center;
-font-weight:600;
-font-size:14px;
-text-decoration:none;
-transition:.2s;
-color: #fff;
-}
-
-.btn-live{
-background:var(--live);
-box-shadow:0 0 12px rgba(239,68,68,.5);
-}
-
-.btn-alt{background:#1f2937;}
-.btn-score{background:var(--accent);}
-
-.btn:hover{transform:translateY(-2px);}
-
-/* MOBILE FIX */
-/* MOBILE STICKY BAR FIX */
-@media(max-width:768px){
-
-.actions{
-position:fixed;
-bottom:0;
-left:0;
-width:96%;
-padding:10px 12px calc(10px + env(safe-area-inset-bottom));
-background:rgba(2,6,23,.98);
-backdrop-filter:blur(12px);
-border-top:1px solid rgba(255,255,255,.06);
-z-index:999;
-
-/* FIX LAYOUT */
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:8px;
-}
-
-/* BUTTON FIX */
-.btn{
-padding:10px 6px;
-font-size:12px;
-border-radius:12px;
-white-space:nowrap;
-overflow:hidden;
-text-overflow:ellipsis;
-
-/* biar gak kepencet */
 display:flex;
 align-items:center;
 justify-content:center;
+gap:8px;
+
+padding:14px 16px;
+border-radius:14px;
+
+font-size:14px;
+font-weight:600;
+text-decoration:none;
+color:#fff;
+
+position:relative;
+overflow:hidden;
+
+background:rgba(255,255,255,0.05);
+backdrop-filter:blur(10px);
+
+border:1px solid rgba(255,255,255,0.08);
+box-shadow:0 8px 25px rgba(0,0,0,.4);
+
+transition:all .25s ease;
+}
+
+/* ICON */
+.btn::before{
+content:"";
+position:absolute;
+inset:0;
+background:linear-gradient(120deg,transparent,rgba(255,255,255,.15),transparent);
+opacity:0;
+transition:.4s;
+}
+
+/* HOVER */
+.btn:hover{
+transform:translateY(-3px) scale(1.02);
+box-shadow:0 12px 35px rgba(0,0,0,.6);
+}
+
+.btn:hover::before{
+opacity:1;
+animation:shine 1s linear;
+}
+
+@keyframes shine{
+0%{transform:translateX(-100%);}
+100%{transform:translateX(100%);}
+}
+
+/* ACTIVE */
+.btn:active{
+transform:scale(.96);
+opacity:.85;
+}
+
+/* VARIANT COLORS */
+.btn-live{
+background:linear-gradient(135deg,#ef4444,#b91c1c);
+box-shadow:0 0 20px rgba(239,68,68,.5);
+}
+
+.btn-alt{
+background:linear-gradient(135deg,#1f2937,#111827);
+}
+
+.btn-score{
+background:linear-gradient(135deg,#22c55e,#15803d);
+box-shadow:0 0 20px rgba(34,197,94,.4);
+}
+
+/* ICON SIZE */
+.btn span{
+font-size:13px;
+}
+
+/* RESPONSIVE TABLET */
+@media(max-width:768px){
+.actions{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:10px;
+}
+
+.btn{
+padding:12px 8px;
+font-size:12px;
+border-radius:12px;
+flex-direction:column;
 gap:4px;
 }
 
-/* ICON ONLY DI LAYAR SEMPIT */
+.btn span{
+font-size:11px;
+}
+}
+
+/* EXTRA SMALL MOBILE */
 @media(max-width:380px){
-.btn span{display:none;}
+.btn span{
+display:none;
 }
-
-.container{
-padding-bottom:95px;
+.btn{
+padding:12px;
 }
-
-}
-  .btn:active{
-transform:scale(.95);
-opacity:.8;
 }
   .ads{
 margin:12px 0;
 padding:6px;
 border-radius:10px;
 background:#fff;
+}
+  /* SOCIAL FLOAT */
+.social-float{
+position:fixed;
+right:12px;
+bottom:90px;
+display:flex;
+flex-direction:column;
+gap:10px;
+z-index:999;
+}
+
+.sf{
+width:42px;
+height:42px;
+display:flex;
+align-items:center;
+justify-content:center;
+border-radius:50%;
+color:#fff;
+font-size:18px;
+text-decoration:none;
+box-shadow:0 6px 15px rgba(0,0,0,.4);
+transition:.3s;
+}
+
+.sf:hover{transform:scale(1.1);}
+
+.sf.wa{background:#25D366;}
+.sf.fb{background:#1877F2;}
+.sf.yt{background:#FF0000;}
+.sf.tg{background:#0088cc;}
+
+/* PLAY UPGRADE */
+.play-btn{
+width:80px;
+height:80px;
+font-size:32px;
+box-shadow:0 0 30px rgba(239,68,68,.4);
+}
+
+/* SMOOTH FADE */
+.video-box iframe{
+animation:fadeIn .5s ease;
+}
+
+@keyframes fadeIn{
+from{opacity:0;transform:scale(.98);}
+to{opacity:1;transform:scale(1);}
+}
+
+/* TITLE UPGRADE */
+.title{
+font-size:20px;
+font-weight:700;
+letter-spacing:.3px;
+}
+
+/* INFO */
+.info{
+font-size:13px;
+opacity:.8;
+}
+
+/* BUTTON ICON STYLE */
+.btn{
+gap:6px;
+}
+
+/* HOVER EFFECT */
+.btn-live:hover{
+box-shadow:0 0 20px rgba(239,68,68,.7);
+}
+
+.btn-score:hover{
+box-shadow:0 0 20px rgba(34,197,94,.6);
+}
+
+/* DESKTOP IMPROVE */
+@media(min-width:768px){
+.video-box{
+border-radius:20px;
+}
 }
 </style>
   <script src="https://jsc.mgid.com/site/829703.js" async></script>
@@ -230,13 +351,19 @@ background:#fff;
 <script>(function(w,q){w[q]=w[q]||[];w[q].push(["_mgc.load"])})(window,"_mgq");</script>
   </div>
 <div class="actions">
-<a href="https://server.beritanasional.eu.org/" target="_blank" class="btn btn-live">Live on TV 📺</a>
-<a href="https://tigoals.candil.eu.org/p/highlights.html" target="_blank" class="btn btn-alt">Highlights 🔴</a>
-<a href="https://tigoals.candil.eu.org/" target="_blank" class="btn btn-score">📊 Score</a>
+<a href="https://jalalive.beritanasional.eu.org" target="_blank" class="btn btn-live">📺 <span>Live TV</span></a>
+<a href="https://tigoals.candil.eu.org/p/highlights.html" target="_blank" class="btn btn-alt">🔥 <span>Highlights</span></a>
+<a href="https://tigoals.candil.eu.org/" target="_blank" class="btn btn-score">📊 <span>Score</span></a>
 </div>
 
 </div>
-
+<!-- SOCIAL FLOAT -->
+<div class="social-float">
+  <a href="https://wa.me/" target="_blank" class="sf wa">🟢</a>
+  <a href="https://facebook.com/" target="_blank" class="sf fb">🔵</a>
+  <a href="https://youtube.com/" target="_blank" class="sf yt">🔴</a>
+  <a href="https://t.me/" target="_blank" class="sf tg">✈️</a>
+</div>
 <script>
 // GET PARAM
 function getParam(){

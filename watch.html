@@ -271,7 +271,23 @@ transition:.3s;
 .sf.fb{background:#1877F2;}
 .sf.yt{background:#FF0000;}
 .sf.tg{background:#0088cc;}
+.sf svg{
+  width:20px;
+  height:20px;
+}
 
+/* biar lebih hidup */
+.sf{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+/* hover glow */
+.sf.wa:hover{box-shadow:0 0 15px #25D366;}
+.sf.fb:hover{box-shadow:0 0 15px #1877F2;}
+.sf.yt:hover{box-shadow:0 0 15px #FF0000;}
+.sf.tg:hover{box-shadow:0 0 15px #0088cc;}
 /* PLAY UPGRADE */
 .play-btn{
 width:80px;
@@ -359,10 +375,35 @@ border-radius:20px;
 </div>
 <!-- SOCIAL FLOAT -->
 <div class="social-float">
-  <a href="https://wa.me/" target="_blank" class="sf wa">🟢</a>
-  <a href="https://facebook.com/" target="_blank" class="sf fb">🔵</a>
-  <a href="https://youtube.com/" target="_blank" class="sf yt">🔴</a>
-  <a href="https://t.me/" target="_blank" class="sf tg">✈️</a>
+
+  <!-- WHATSAPP -->
+  <a href="https://www.whatsapp.com/channel/0029VbC7N00EQIaqwkJiAv0Y" target="_blank" class="sf wa" aria-label="WhatsApp">
+    <svg viewBox="0 0 24 24" fill="currentColor">
+      <path d="M20.52 3.48A11.94 11.94 0 0012.06 0C5.5 0 .15 5.35.15 11.91c0 2.1.55 4.16 1.6 5.97L0 24l6.27-1.63a11.9 11.9 0 005.79 1.48h.01c6.56 0 11.91-5.35 11.91-11.91 0-3.18-1.24-6.17-3.46-8.46zM12.07 21.6a9.7 9.7 0 01-4.95-1.36l-.35-.2-3.72.97.99-3.63-.23-.37a9.67 9.67 0 01-1.49-5.1c0-5.36 4.36-9.72 9.73-9.72 2.6 0 5.04 1.01 6.88 2.85a9.67 9.67 0 012.85 6.88c0 5.36-4.36 9.72-9.71 9.72zm5.36-7.28c-.29-.15-1.72-.85-1.98-.95-.27-.1-.47-.15-.66.15-.2.29-.76.95-.93 1.14-.17.2-.34.22-.63.07-.29-.15-1.24-.46-2.36-1.47-.87-.78-1.46-1.74-1.63-2.03-.17-.29-.02-.45.13-.6.13-.13.29-.34.44-.51.15-.17.2-.29.29-.49.1-.2.05-.37-.02-.52-.07-.15-.66-1.6-.91-2.2-.24-.58-.49-.5-.66-.51h-.56c-.2 0-.52.07-.79.37-.27.29-1.03 1.01-1.03 2.46s1.06 2.85 1.21 3.05c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.5 1.69.64.71.23 1.35.2 1.86.12.57-.09 1.72-.7 1.96-1.38.24-.68.24-1.26.17-1.38-.07-.12-.27-.2-.56-.34z"/>
+    </svg>
+  </a>
+
+  <!-- FACEBOOK -->
+  <a href="https://www.facebook.com/profile.php?id=61574589075880" target="_blank" class="sf fb" aria-label="Facebook">
+    <svg viewBox="0 0 24 24" fill="currentColor">
+      <path d="M22 12a10 10 0 10-11.5 9.87v-6.99H8v-2.88h2.5V9.8c0-2.47 1.47-3.83 3.72-3.83 1.08 0 2.2.19 2.2.19v2.42h-1.24c-1.22 0-1.6.76-1.6 1.54v1.85H16l-.4 2.88h-2.42v6.99A10 10 0 0022 12z"/>
+    </svg>
+  </a>
+
+  <!-- YOUTUBE -->
+  <a href="https://www.youtube.com/@CandilRiyadi" target="_blank" class="sf yt" aria-label="YouTube">
+    <svg viewBox="0 0 24 24" fill="currentColor">
+      <path d="M23.5 6.2a3 3 0 00-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 00.5 6.2 31.3 31.3 0 000 12a31.3 31.3 0 00.5 5.8 3 3 0 002.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 002.1-2.1A31.3 31.3 0 0024 12a31.3 31.3 0 00-.5-5.8zM9.75 15.5v-7l6 3.5-6 3.5z"/>
+    </svg>
+  </a>
+
+  <!-- TELEGRAM -->
+  <a href="https://t.me/score808alternative" target="_blank" class="sf tg" aria-label="Telegram">
+    <svg viewBox="0 0 24 24" fill="currentColor">
+      <path d="M9.04 15.56l-.39 5.49c.56 0 .8-.24 1.08-.53l2.6-2.48 5.38 3.94c.99.55 1.69.26 1.96-.92l3.56-16.67c.33-1.54-.55-2.14-1.5-1.79L1.5 9.55c-1.49.58-1.47 1.42-.25 1.8l5.58 1.74L19.6 6.6c.6-.4 1.15-.18.7.22"/>
+    </svg>
+  </a>
+
 </div>
 <script>
 // GET PARAM
